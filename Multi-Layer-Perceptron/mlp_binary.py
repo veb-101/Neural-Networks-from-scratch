@@ -21,8 +21,8 @@ class MLP:
     def initialize_parameters(self):
         np.random.seed(1)
         for l in range(1, len(self.layers_size)):
-            self.parameters[f"W{l}"] = np.random.randn(self.layers_size[l], self.layers_size[l - 1]) / np.sqrt(
-                self.layers_size[l - 1])
+            self.parameters[f"W{l}"] = np.random.randn(self.layers_size[l], self.layers_size[l - 1]) / \
+                np.sqrt(self.layers_size[l - 1])
             self.parameters[f"b{l}"] = np.zeros((self.layers_size[l], 1))
 
     def forward(self, X):
@@ -35,8 +35,8 @@ class MLP:
             store[f"W{l+1}"] = self.parameters["W" + str(l + 1)]
             store[f"Z{l+1}"] = Z
 
-        Z = self.parameters[f"W{self.L}"].dot(
-            A) + self.parameters[f"b{self.L}"]
+        Z = self.parameters[f"W{self.L}"].dot(A) + \
+            self.parameters[f"b{self.L}"]
         A = self.sigmoid(Z)
         store[f"A{self.L}"] = A
         store[f"W{self.L}"] = self.parameters[f"W{self.L}"]
@@ -168,8 +168,8 @@ if __name__ == '__main__':
     train_x, x_test = preprocess(x_train, x_test)
 
     # limiting examples
-    x_train = x_train[:6000,:]
-    y_train = y_train[:6000,:]
+    x_train = x_train[:6000, :]
+    y_train = y_train[:6000, :]
     x_test = x_test[:500, :]
     y_test = y_test[:500, :]
 
