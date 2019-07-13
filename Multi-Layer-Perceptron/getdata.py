@@ -2,6 +2,10 @@ import mnist
 
 
 def reshapeImages(images):
+    '''
+    reshaping the dataset into shape (m, h*w) for images
+    and (m, 1) for labels
+    '''
     images = images.reshape(images.shape[0], -1)
     return images
 
