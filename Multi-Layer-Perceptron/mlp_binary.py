@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 
 
 class MLP:
-    def __init__(self, layers_size):
-        self.layers_size = layers_size
+    def __init__(self, layers):
+        self.layers = layers
         self.parameters = {}
-        self.L = len(self.layers_size)
+        self.L = len(self.layers)
         self.m = 0
         self.costs = []
 
@@ -20,10 +20,10 @@ class MLP:
 
     def initialize_parameters(self):
         np.random.seed(1)
-        for l in range(1, len(self.layers_size)):
-            self.parameters[f"W{l}"] = np.random.randn(self.layers_size[l], self.layers_size[l - 1]) / \
-                np.sqrt(self.layers_size[l - 1])
-            self.parameters[f"b{l}"] = np.zeros((self.layers_size[l], 1))
+        for l in range(1, len(self.layers)):
+            self.parameters[f"W{l}"] = np.random.randn(self.layers[l], self.layers[l - 1]) / \
+                np.sqrt(self.layers[l - 1])
+            self.parameters[f"b{l}"] = np.zeros((self.layers[l], 1))
 
     def forward(self, X):
         store = {}
@@ -76,7 +76,7 @@ class MLP:
         np.random.seed(1)
 
         self.m = X.shape[1]
-        self.layers_size.insert(0, X.shape[0])
+        self.layers.insert(0, X.shape[0])
 
         self.initialize_parameters()
         for epoch in range(epochs):
