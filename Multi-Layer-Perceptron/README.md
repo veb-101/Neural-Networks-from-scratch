@@ -13,3 +13,11 @@
 >Steps:<br>
 >> 1. Create a dataset folder.<br> 
 >> 2. Download the mnist dataset from [download the four .gz files](http://yann.lecun.com/exdb/mnist/) place them in the dataset folder.
+
+#### Run Online 
+1. Multi-layer Perceptron for binary classification on mnist
+    - [colab link](https://colab.research.google.com/drive/1NanKamrYEB0ncPm25OGLk2kTItusk7ec#scrollTo=Uwxop631l0H5)
+    - [repl.it link](https://repl.it/@VaibhavSingh4/MLPBinarymnist)
+    
+    
+    
