@@ -18,6 +18,9 @@
 1. Multi-layer Perceptron for binary classification on mnist
     - [colab link](https://colab.research.google.com/drive/1NanKamrYEB0ncPm25OGLk2kTItusk7ec#scrollTo=Uwxop631l0H5)
     - [repl.it link](https://repl.it/@VaibhavSingh4/MLPBinarymnist)
-    
+
+2. Multi-layer Perceptron for multi-class classification on mnist
+    - [colab link](https://colab.research.google.com/drive/1ItvYG_kU28Wag8WSka-H1GgcwxK_uehz)
+    - [repl.it link](https://repl.it/@VaibhavSingh4/MLPSoftmaxmnist)
     
     
