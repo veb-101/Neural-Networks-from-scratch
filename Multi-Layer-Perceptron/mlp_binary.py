@@ -134,9 +134,8 @@ def preprocess(x_train, x_test):
     x_test = x_test / 255.0
     return x_train, x_test
 
+
 # https://thispointer.com/find-the-index-of-a-value-in-numpy-array/
-
-
 def get_binary_dataset():
     x_train_orig, y_train_orig, x_test_orig, y_test_orig = getMnistData()
     # preparing training dataset
@@ -192,4 +191,4 @@ if __name__ == '__main__':
     mlp.fit(x_train, y_train, learning_rate=0.1, epochs=1000)
     print(f"Training Accuracy: {mlp.predict(x_train, y_train)}")
     print(f"Testing Accuracy: {mlp.predict(x_test, y_test)}")
-    # mlp.plot_cost()
+    mlp.plot_cost()
