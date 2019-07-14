@@ -166,6 +166,7 @@ def get_binary_dataset():
 if __name__ == '__main__':
     x_train, y_train, x_test, y_test = get_binary_dataset()
     train_x, x_test = preprocess(x_train, x_test)
+    visualizeMnist()
 
     # limiting examples
     x_train = x_train[:6000, :]
