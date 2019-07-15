@@ -8,6 +8,8 @@
 
 3. [Understanding and implementing Neural Network with SoftMax in Python from scratch](http://www.adeveloperdiary.com/data-science/deep-learning/neural-network-with-softmax-in-python/)
 
+4. [Multi-layer perceptron using keras](https://github.com/keras-team/keras/blob/master/examples/mnist_mlp.py#L21)
+
 <h4>Dataset:</h3><br>
 
 >Steps:<br>
