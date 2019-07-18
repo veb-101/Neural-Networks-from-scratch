@@ -35,6 +35,7 @@ ____________________________
     7. [A Gentle Introduction to Cross-Entropy Loss Function](https://sefiks.com/2017/12/17/a-gentle-introduction-to-cross-entropy-loss-function/)
     8. [Chris Olah's post 'Visual Information Theory'](http://colah.github.io/posts/2015-09-Visual-Information/)
     9. [The Softmax function and its derivative](https://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative/)
+    10. [Softmax as a Neural Networks Activation Function](https://sefiks.com/2017/11/08/softmax-as-a-neural-networks-activation-function/)
 
 
 <br>
