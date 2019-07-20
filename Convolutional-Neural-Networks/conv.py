@@ -59,6 +59,24 @@ class Conv3x3(object):
         for im_region, i, j in self.iterate_regions(self.last_input):
             for f in range(self.num_filters):
                 dL_dfilters[f] += dL_dout[i, j, f] * im_region
+        '''
+        At each pass we update each filter (f, f) by multiply the image region
+        with that filter's output which simultaneously update all the weights in
+        the filter.
+        We do this for each filter
+        # Take one output unit error for a filter
+        # Multiply it by the image region to give all the gradients of the weights
+        of the filter wrt. that image region (we update the matrix of zeros for first filter and so on...)
+        # Take output unit error at the same postion as first for another filter 
+        eg. filter 1 output errors: dE/doutF(1)11, dE/doutF(1)12, dE/doutF(1)21, dE/doutF(1)22
+        filter 2 output errors:  dE/doutF(2)11, dE/doutF(2)12, dE/doutF(2)21, dE/doutF(2)22
+        take dE/doutF(1)11 * image region which gives filter1 weights error wrt to first image region
+        take dE/doutF(2)11 * image region which gives filter2 weights error wrt to first image region
+
+        # Continuously adding all the errors wrt to all image regions in the end
+        gives the final dE/dFilter(1) matrix wrt to the whole matrix
+        similarly for other filters
+        '''
 
         # Update filters
         self.filters -= learning_rate * dL_dfilters
