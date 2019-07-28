@@ -45,22 +45,49 @@ def softmax(xs):
 # Inititalize RNN
 rnn = RNN(vocab_size, 2)
 
-inputs = createInputs('i am very good')
-out, h = rnn.forward(inputs)
-probs = softmax(out)
-# print(out)
+def processData(data, backprop=True):
+    '''
+    Returns the loss and accuracy for the given data.
+    - data is a dictionary mapping text to True or False
+    - backprop determines if the backward phase should be run.
+    '''
 
-for x, y in train_data.items():
-    inputs = createInputs(x)
-    target = int(y)
+    items = list(data.items())
+    random.shuffle(items)
 
-    # Forward pass
-    out, _ = rnn.forward(inputs)
-    probs = softmax(out)
+    loss = 0
+    correct = 0
 
-    # build dL/dy
-    dL_dy = probs
-    dL_dy[target] -= 1
+    for x, y in items:
+        inputs = createInputs(x)
+        target = int(y)
 
-    # Backward pass
-    rnn.backprop()
+        # Forward Propagation
+        out, _ = rnn.forward(inputs)
+        probs = softmax(out)
+
+        # loss / accuracy
+        loss -= np.log(probs[target])
+        correct += int(np.argmax(probs) == target)
+
+        if backprop:
+            # build dL/dy
+            dL_dy = probs
+            dL_dy[target] -= 1
+
+            # Backpropagation 
+            rnn.backprop(dL_dy)
+        
+        return loss / len(data), correct / len(data)
+
+
+# training loop
+for epoch in range(1000):
+    train_loss, train_acc = processData(train_data)
+
+    if epoch % 100 == 99:
+        print(f"----- Epoch {epoch+1}")
+        print(f"Train:\tLoss: {train_loss:.3f}% | Accuracy: {train_acc:.3f}%")
+        
+        test_loss, test_acc = processData(test_data, test_acc)
+        print(f"Test:\tLoss: {test_loss:.3f}% | Accuracy: {test_acc:.3f}%")
