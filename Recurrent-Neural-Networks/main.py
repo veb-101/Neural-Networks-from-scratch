@@ -45,6 +45,7 @@ def softmax(xs):
 # Inititalize RNN
 rnn = RNN(vocab_size, 2)
 
+
 def processData(data, backprop=True):
     '''
     Returns the loss and accuracy for the given data.
@@ -75,9 +76,9 @@ def processData(data, backprop=True):
             dL_dy = probs
             dL_dy[target] -= 1
 
-            # Backpropagation 
+            # Backpropagation
             rnn.backprop(dL_dy)
-        
+
         return loss / len(data), correct / len(data)
 
 
@@ -87,7 +88,8 @@ for epoch in range(1000):
 
     if epoch % 100 == 99:
         print(f"----- Epoch {epoch+1}")
-        print(f"Train:\tLoss: {train_loss:.3f}% | Accuracy: {train_acc:.3f}%")
-        
-        test_loss, test_acc = processData(test_data, test_acc)
-        print(f"Test:\tLoss: {test_loss:.3f}% | Accuracy: {test_acc:.3f}%")
+        print(
+            f"Train: Loss: {train_loss[0]:.3f}% | Accuracy: {train_acc:.3f}%")
+
+        test_loss, test_acc = processData(test_data, False)
+        print(f"Test:\tLoss: {test_loss[0]:.3f}% | Accuracy: {test_acc:.3f}%")

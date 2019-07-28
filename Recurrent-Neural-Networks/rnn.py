@@ -33,7 +33,6 @@ class RNN:
             self.last_hs[i+1] = h
 
         y = self.Why @ h + self.by
-        print(h.shape)
         return y, h
 
     def backprop(self, dL_dy, learning_rate=2e-2):
