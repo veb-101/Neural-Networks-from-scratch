@@ -10,11 +10,13 @@
 
 4. [Multi-layer perceptron using keras](https://github.com/keras-team/keras/blob/master/examples/mnist_mlp.py#L21)
 
-<h4>Dataset:</h3><br>
+5. [Neural Networks: Feedforward and Backpropagation Explained & Optimization](https://mlfromscratch.com/neural-networks-explained/)
+<br>
 
->Steps:<br>
->> 1. Create a dataset folder.<br> 
->> 2. Download the mnist dataset from [download the four .gz files](http://yann.lecun.com/exdb/mnist/) place them in the dataset folder.
+#### Dataset
+* Steps:
+   1. Create a dataset folder.<br> 
+   2. Download the mnist dataset from [download the four .gz files](http://yann.lecun.com/exdb/mnist/) place them in the dataset folder.
 
 #### Run Online 
 1. Multi-layer Perceptron for binary classification on mnist
