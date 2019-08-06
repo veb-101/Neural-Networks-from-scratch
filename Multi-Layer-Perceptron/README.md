@@ -11,6 +11,8 @@
 4. [Multi-layer perceptron using keras](https://github.com/keras-team/keras/blob/master/examples/mnist_mlp.py#L21)
 
 5. [Neural Networks: Feedforward and Backpropagation Explained & Optimization](https://mlfromscratch.com/neural-networks-explained/)
+
+6. [Let’s code a Neural Network in plain NumPy](https://towardsdatascience.com/lets-code-a-neural-network-in-plain-numpy-ae7e74410795)
 <br>
 
 #### Dataset
