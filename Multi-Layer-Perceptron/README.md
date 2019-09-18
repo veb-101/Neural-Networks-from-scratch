@@ -18,7 +18,8 @@
 #### Dataset
 * Steps:
    1. Create a dataset folder.<br> 
-   2. Download the mnist dataset from [download the four .gz files](http://yann.lecun.com/exdb/mnist/) place them in the dataset folder.
+   2. Download the mnist dataset from [here](http://yann.lecun.com/exdb/mnist/) (download the four <b>.gz</b> files) place them in the dataset folder.
+   3. Install the mnist library [here](https://pypi.org/project/mnist/).
 
 #### Run Online 
 1. Multi-layer Perceptron for binary classification on mnist
@@ -28,5 +29,3 @@
 2. Multi-layer Perceptron for multi-class classification on mnist
     - [colab link](https://colab.research.google.com/drive/1ItvYG_kU28Wag8WSka-H1GgcwxK_uehz)
     - [repl.it link](https://repl.it/@VaibhavSingh4/MLPSoftmaxmnist)
-    
-    
